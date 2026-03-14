@@ -1,6 +1,11 @@
-# cl-email-validate
+# Email Validate
 
-Email address validation library for Common Lisp with zero external dependencies.
+Utility library providing specialized functionality for Common Lisp applications.
+
+## Features
+
+- Core functionality implementation
+- Pure Common Lisp (zero external dependencies)
 
 ## Installation
 
@@ -8,22 +13,27 @@ Email address validation library for Common Lisp with zero external dependencies
 (asdf:load-system :cl-email-validate)
 ```
 
-## API
-
-- `(valid-email-p email)` - Returns T if email is valid
-- `(parse-email email)` - Returns (values local-part domain) or NIL
-- `(email-local-part email)` - Extract local part
-- `(email-domain email)` - Extract domain
-- `(normalize-email email)` - Normalize email (lowercase domain)
-
-## Example
+## Usage
 
 ```lisp
-(cl-email-validate:valid-email-p "user@example.com") ; => T
-(cl-email-validate:parse-email "User@Example.COM")   ; => "User", "example.com"
-(cl-email-validate:normalize-email "User@Example.COM") ; => "User@example.com"
+;; Example usage
+(main-function)
 ```
+
+## Testing
+
+```lisp
+(asdf:test-system :cl-email-validate)
+```
+
+## API
+
+- `main-function - Primary function for core functionality`
 
 ## License
 
-BSD-3-Clause - Parkian Company LLC 2024-2026
+BSD-3-Clause License - See LICENSE file for details.
+
+---
+Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
