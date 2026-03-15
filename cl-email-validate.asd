@@ -6,13 +6,16 @@
 
 (asdf:defsystem #:cl-email-validate
   :description "Email address validation library"
-  :author "Parkian Company LLC"
+  :author "Park Ian Co"
   :license "Apache-2.0"
   :version "0.1.0"
   :serial t
   :components ((:file "package")
                (:module "src"
-                :components ((:file "validate")))))
+                :components ((:file "package")
+                             (:file "conditions" :depends-on ("package"))
+                             (:file "types" :depends-on ("package"))
+                             (:file "cl-email-validate" :depends-on ("package" "conditions" "types")))))))
 
 (asdf:defsystem #:cl-email-validate/test
   :description "Tests for cl-email-validate"
